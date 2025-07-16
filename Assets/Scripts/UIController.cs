@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
-
 public class UIController : MonoBehaviour
 {
     public TextMeshProUGUI CoinCounter;
@@ -14,9 +14,18 @@ public class UIController : MonoBehaviour
 
     private float EndGametimer = 180;
 
+
+    PlayerController playerController;
+    public Image LifeBar;
+    public Gradient healthGradient;
+    void Awake()
+    {
+        playerController = GetComponent<PlayerController>();
+    }
     void Update()
     {
         EndGameCountDown();
+        UpdateHealthBar();
     }
     public void AddCoin()
     {
@@ -36,5 +45,12 @@ public class UIController : MonoBehaviour
         {
             Time.timeScale = 0f;
         }
+    }
+    void UpdateHealthBar()
+    {
+        float fillAmount = (float)playerController.currentHealth / playerController.maxHealth;
+        LifeBar.fillAmount = fillAmount;
+
+        LifeBar.color = healthGradient.Evaluate(fillAmount);
     }
 }

@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
     public int maxHealth = 100;
-    int currentHealth;
+    public int currentHealth;
 
     [SerializeField] int Turretdamage;
 
