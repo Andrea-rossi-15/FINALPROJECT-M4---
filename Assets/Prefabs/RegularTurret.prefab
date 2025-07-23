@@ -363,11 +363,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f8c4cade1744af0b18eb3f6829ae19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firerate: 3
+  firerate: 5
   Hp: 100
   Target: {fileID: 0}
-  FireRange: 20
-  NextShootTimer: 2
+  FireRange: 25
+  NextShootTimer: 3
   bulletPrefab: {fileID: 0}
   firePoint: {fileID: 0}
 --- !u!1 &8301670002439045886
