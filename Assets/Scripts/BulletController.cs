@@ -5,33 +5,32 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public float speed = 10f;
-    private Transform player;
+    private Vector3 direction;
+
+
+
 
     void Start()
     {
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-        if (playerObj != null)
+        if (player != null)
         {
-            player = playerObj.transform;
+            Vector3 direction = (player.transform.position - transform.position).normalized;
+            GetComponent<Rigidbody>().velocity = direction * speed;
+            transform.forward = direction;
         }
 
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 5f);
     }
 
-    void Update()
-    {
-        if (player == null) return;
-
-        Vector3 direction = (player.position - transform.position).normalized;
-
-        transform.position += direction * speed * Time.deltaTime;
-
-        transform.forward = direction;
-    }
     void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+        if (collision.collider.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+
     }
 }
 

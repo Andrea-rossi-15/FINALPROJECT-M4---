@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6139915140673788880}
   - component: {fileID: 5093239000057018561}
   - component: {fileID: 6176887915983232617}
-  - component: {fileID: 8143834656337006313}
+  - component: {fileID: 3954532502994681452}
   m_Layer: 0
   m_Name: CoinKing
   m_TagString: Untagged
@@ -106,7 +106,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8143834656337006313
+--- !u!114 &3954532502994681452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,6 +115,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9219595051482309784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f6342bef39ff47f497542c9de362488, type: 3}
+  m_Script: {fileID: 11500000, guid: fa56897dffeb54944a00f746cb80bff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

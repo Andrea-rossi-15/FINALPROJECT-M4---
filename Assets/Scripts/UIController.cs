@@ -16,8 +16,8 @@ public class UIController : MonoBehaviour
 
 
     PlayerController playerController;
-    public Image LifeBar;
-    public Gradient healthGradient;
+
+
     void Awake()
     {
         playerController = GetComponent<PlayerController>();
@@ -25,7 +25,7 @@ public class UIController : MonoBehaviour
     void Update()
     {
         EndGameCountDown();
-        UpdateHealthBar();
+
     }
     public void AddCoin()
     {
@@ -46,11 +46,5 @@ public class UIController : MonoBehaviour
             Time.timeScale = 0f;
         }
     }
-    void UpdateHealthBar()
-    {
-        float fillAmount = (float)playerController.currentHealth / playerController.maxHealth;
-        LifeBar.fillAmount = fillAmount;
 
-        LifeBar.color = healthGradient.Evaluate(fillAmount);
-    }
 }
